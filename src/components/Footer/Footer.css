@@ -2,9 +2,13 @@
   font-weight: 500;
   display: flex;
   font-family: Cabinet Grotesk;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 20px;
   letter-spacing: 0%;
+  justify-content: space-between;
+  align-items: center;
+  margin: 171px 40px 24px;
+  gap: 20px;
 }
 
 .footer__year {
