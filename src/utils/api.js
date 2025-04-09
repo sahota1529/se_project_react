@@ -1,4 +1,6 @@
-const baseUrl = "http://localhost:3000";
+import { Link } from "react-router-dom";
+
+const baseUrl = "http://localhost:3001";
 
 export const checkResponse = (res) => {
   if (res.ok) {
@@ -27,7 +29,7 @@ function addItem({ name, imageUrl, weather }) {
   return fetch(`${baseUrl}/items`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ name, imageUrl, weather }),
+    body: JSON.stringify({ name, link, weather }),
   }).then(checkResponse);
 }
 export { getItems, addItem, deleteCard };

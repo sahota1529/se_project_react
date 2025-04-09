@@ -1,5 +1,5 @@
 .modal__content {
-  max-width: 670px;
+  /*max-width: 670px;*/
 }
 .modal__content_type_confirm {
   font-family: "Cabinet Grotesk";
@@ -40,9 +40,8 @@
   padding-top: 40px;
 }
 
-/* modal close button for delete confirm modal */
 .modal__close {
-  background: transparent url("../../assets/closeIconGrey.svg") center no-repeat;
+  /* background: transparent url("../../assets/closeIconGrey.svg") center no-repeat; */
   width: 20px;
   height: 20px;
   position: absolute;
