@@ -23,12 +23,15 @@
 .modal__content {
   background-color: #ffffff;
   position: relative;
-  padding: 28px 28px 36px;
   width: 100%;
   max-width: 496px;
   box-sizing: border-box;
   border-radius: 20px;
   padding: 28px 28px 36px;
+}
+
+.modal__content_type_preview {
+  padding: 0;
 }
 
 .modal__close {
@@ -65,7 +68,7 @@
   gap: 8px;
 }
 
-.modal__radio-buttons {
+.modal__radio-button {
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -97,7 +100,7 @@ input[type="radio"] {
   border-radius: 4px;
   gap: 8px;
   padding: 8px 16px;
-  width: 120px;
+  width: fit-content;
   color: #ffffff;
   background-color: #000000;
 }
