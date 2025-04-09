@@ -29,7 +29,7 @@ function addItem({ name, imageUrl, weather }) {
   return fetch(`${baseUrl}/items`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ name, link, weather }),
+    body: JSON.stringify({ name, imageUrl, weather }),
   }).then(checkResponse);
 }
 export { getItems, addItem, deleteCard };
