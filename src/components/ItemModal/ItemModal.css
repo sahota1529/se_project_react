@@ -24,13 +24,13 @@
   /* top: 106px; */
   min-height: 490px;
   max-width: 498px;
-  border-radius: 18px;
 }
 
 .modal__footer-caption {
-  margin: 20px 0 12px 32px;
+  /* margin: 20px 0 12px 32px; */
   display: flex;
-  align-items: flex-end;
+  flex-direction: column;
+  gap: 12px;
 }
 .modal__weather {
   display: flex;
@@ -44,15 +44,17 @@
   padding: 0;
   margin: 0;
   font-family: "Cabinet Grotesk";
+  size: 20px;
 }
 
 .modal__footer {
   display: flex;
   flex-direction: row;
-  align-items: center;
-  padding: 2px 32px 0px 32px;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 20px 32px;
   background-color: white;
-  width: 498px;
+
   height: 112px;
   gap: 0;
   box-sizing: border-box;
