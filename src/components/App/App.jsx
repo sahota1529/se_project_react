@@ -5,7 +5,7 @@ import "./App.css";
 
 import { coordinates, APIkey } from "../../utils/constants.js";
 import { getWeather, filterWeatherData } from "../../utils/weatherApi.js";
-import { api } from "../utils/api.js";
+import { api } from "../../utils/api.js";
 
 import Header from "../Header/Header.jsx";
 import Main from "../Main/Main.jsx";
@@ -17,7 +17,7 @@ import Profile from "../Profile/Profile.jsx";
 import AddItemModal from "../AddItemModal/AddItemModal.jsx";
 import RegisterModal from "../RegisterModel/RegisterModal.jsx";
 import LoginModal from "../LoginModal/LoginModal.jsx";
-import EditProfileModal from "../Profile/EditProfileModal.jsx";
+import EditProfileModal from "../EditProfileModal/EditProfileModal.jsx";
 import ProtectedRoute from "../ProtectedRoute/ProtectedRoute.jsx";
 import { checkAuth } from "../../utils/auth.js";
 

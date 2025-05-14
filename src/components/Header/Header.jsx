@@ -1,5 +1,5 @@
 import { useState, useContext } from "react";
-import headerLogo from "../../images/headerLogo.png";
+import headerLogo from "../../images/wtwr.svg";
 import userAvatar from "../../images/avatar.svg";
 import "./Header.css";
 import ToggleSwitch from "../ToggleSwitch/ToggleSwitch";
