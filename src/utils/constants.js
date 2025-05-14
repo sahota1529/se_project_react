@@ -1,81 +1,3 @@
-export const weatherOptions = [
-  {
-    day: true,
-    condition: "sunny",
-    url: new URL("../images/day/sunny.svg", import.meta.url).href,
-  },
-
-  {
-    day: true,
-    condition: "cloudy",
-    url: new URL("../images/day/cloudy.svg", import.meta.url).href,
-  },
-  {
-    day: true,
-    condition: "fog",
-    url: new URL("../images/day/fog.svg", import.meta.url).href,
-  },
-
-  {
-    day: true,
-    condition: "rain",
-    url: new URL("../images/day/rain.svg", import.meta.url).href,
-  },
-
-  {
-    day: true,
-    condition: "snow",
-    url: new URL("../images/day/snow.svg", import.meta.url).href,
-  },
-
-  {
-    day: true,
-    condition: "storm",
-    url: new URL("../images/day/storm.svg", import.meta.url).href,
-  },
-
-  {
-    day: false,
-    condition: "sunny",
-    url: new URL("../images/night/sunny.svg", import.meta.url).href,
-  },
-  {
-    day: false,
-    condition: "cloudy",
-    url: new URL("../images/night/cloudy.svg", import.meta.url).href,
-  },
-  {
-    day: false,
-    condition: "rainy",
-    url: new URL("../images/night/rainy.svg", import.meta.url).href,
-  },
-  {
-    day: false,
-    condition: "snowy",
-    url: new URL("../images/night/snowy.svg", import.meta.url).href,
-  },
-
-  {
-    day: false,
-    condition: "stormy",
-    url: new URL("../images/night/stormy.svg", import.meta.url).href,
-  },
-
-  {
-    day: false,
-    condition: "foggy",
-    url: new URL("../images/night/foggy.svg", import.meta.url).href,
-  },
-];
-
-export const defaultWeatherOptions = {
-  day: {
-    url: new URL("../images/day/default.png", import.meta.url).href,
-  },
-  night: {
-    url: new URL("../images/night/default.png", import.meta.url).href,
-  },
-};
 export const defaultClothingItems = [
   {
     _id: 0,
@@ -115,9 +37,82 @@ export const defaultClothingItems = [
   },
 ];
 
+export const weatherOptions = [
+  {
+    day: true,
+    condition: "clear",
+    url: new URL("../images/Day/Sunny.png", import.meta.url).href,
+  },
+  {
+    day: true,
+    condition: "clouds",
+    url: new URL("../images/Day/Cloudy.png", import.meta.url).href,
+  },
+  {
+    day: true,
+    condition: "rain",
+    url: new URL("../images/Day/Rain.png", import.meta.url).href,
+  },
+  {
+    day: true,
+    condition: "thunderstorm",
+    url: new URL("../images/Day/Storm.png", import.meta.url).href,
+  },
+  {
+    day: true,
+    condition: "snow",
+    url: new URL("../images/Day/Snow.png", import.meta.url).href,
+  },
+  {
+    day: true,
+    condition: "atmosphere",
+    url: new URL("../images/Day/Fog.png", import.meta.url).href,
+  },
+
+  {
+    day: false,
+    condition: "clear",
+    url: new URL("../images/Night/NightSunny.png", import.meta.url).href,
+  },
+  {
+    day: false,
+    condition: "clouds",
+    url: new URL("../images/Night/NightCloudy.png", import.meta.url).href,
+  },
+  {
+    day: false,
+    condition: "rain",
+    url: new URL("../images/Night/NightRain.png", import.meta.url).href,
+  },
+  {
+    day: false,
+    condition: "thunderstorm",
+    url: new URL("../images/Night/NightStorm.png", import.meta.url).href,
+  },
+  {
+    day: false,
+    condition: "snow",
+    url: new URL("../images/Night/NightSnow.png", import.meta.url).href,
+  },
+  {
+    day: false,
+    condition: "atmosphere",
+    url: new URL("../images/Night/NightFog.png", import.meta.url).href,
+  },
+];
+
+export const defaultWeatherOptions = {
+  day: {
+    url: new URL("../images/Day/default.png", import.meta.url).href,
+  },
+  night: {
+    url: new URL("../images/Night/default.png", import.meta.url).href,
+  },
+};
+
 export const coordinates = {
-  latitude: 38.86092,
-  longitude: -76.886379,
+  latitude: 38.29603,
+  longitude: -86.95286,
 };
 
 export const APIkey = "3adad73a7a96636d6b780941994be53f";

@@ -1,42 +1,48 @@
-import React from "react";
+import { useContext } from "react";
+import CurrentUserContext from "../../contexts/CurrentUserContext";
 import "./ClothesSection.css";
-import ItemCard from "../ItemCard/ItemCard";
 // import { defaultClothingItems } from "../../utils/constants";
+import ItemCard from "../ItemCard/ItemCard";
 
 function ClothesSection({
-  // onCardClick,
+  onAddGarment,
+  onCardClick,
   clothingItems,
-  handleAddClick,
-  handleCardClick,
+  onCardLike,
 }) {
+  // console.log(clothingItems);
+  const currentUser = useContext(CurrentUserContext);
+  const userClothingItems =
+    currentUser && clothingItems
+      ? clothingItems.filter((item) => item.owner == currentUser._id)
+      : [];
+
   return (
-    <div className="clothes__section">
-      <div className="clothes__section-caption">
-        <p className="item__label">Your Items</p>
+    <div className="clothes-section">
+      <div className="clothes-section__heading">
+        <p className="clothes-section__label">Your items</p>
         <button
-          onClick={handleAddClick}
+          onClick={onAddGarment}
           type="button"
-          className="clothes__button"
+          className="clothes-section__add"
         >
-          {" "}
-          + Add New Clothes
+          <span className="clothes-section__button-text">+ Add new</span>
         </button>
       </div>
-      <ul className="clothes__section-list">
-        {clothingItems &&
-          clothingItems.map((item) => {
-            return (
-              <ItemCard
-                key={item._id}
-                item={item}
-                // TODO - pass as prop
-                onCardClick={handleCardClick}
-                handleCardClick={handleCardClick}
-              />
-            );
-          })}
+      <ul className="clothes-section__items">
+        {userClothingItems.map((item) => {
+          return (
+            <ItemCard
+              key={item._id}
+              item={item}
+              onCardClick={onCardClick}
+              onCardLike={onCardLike}
+            />
+          );
+        })}
       </ul>
     </div>
   );
 }
+
 export default ClothesSection;
