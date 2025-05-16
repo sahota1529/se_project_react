@@ -1,7 +1,6 @@
 import SideBar from "../SideBar/SideBar";
 import ClothesSection from "../ClothesSection/ClothesSection.jsx";
 import "./Profile.css";
-import avatar from "../../images/avatar.svg";
 
 function Profile({
   onCardClick,

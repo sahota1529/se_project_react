@@ -1,6 +1,5 @@
 import { useState, useContext } from "react";
 import headerLogo from "../../images/wtwr.svg";
-import userAvatar from "../../images/avatar.svg";
 import "./Header.css";
 import ToggleSwitch from "../ToggleSwitch/ToggleSwitch";
 import { Link } from "react-router-dom";
