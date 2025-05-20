@@ -5,8 +5,8 @@ function ModalWithForm({
   children,
   buttonText,
   title,
-  isOpen,
   onClose,
+  isOpen,
   onSubmit,
 }) {
   return (

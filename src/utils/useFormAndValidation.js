@@ -1,9 +1,7 @@
 import { useState } from "react";
 
-const useFormAndValidation = (initialValues) => {
-  const [values, setValues] = useState(initialValues);
-
-  useFormAndValidation({
+const useFormAndValidation = () => {
+  const [values, setValues] = useState({
     email: "",
     password: "",
     name: "",

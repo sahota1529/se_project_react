@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Route, Routes, useNavigate } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 
 import "./App.css";
 
@@ -15,11 +15,11 @@ import CurrentTemperatureUnitContext from "../../contexts/CurrentTemperatureUnit
 import CurrentUserContext from "../../contexts/CurrentUserContext.jsx";
 import Profile from "../Profile/Profile.jsx";
 import AddItemModal from "../AddItemModal/AddItemModal.jsx";
-import RegisterModal from "../RegisterModel/RegisterModal.jsx";
+import RegisterModal from "../RegisterModal/RegisterModal.jsx";
 import LoginModal from "../LoginModal/LoginModal.jsx";
 import EditProfileModal from "../EditProfileModal/EditProfileModal.jsx";
 import ProtectedRoute from "../ProtectedRoute/ProtectedRoute.jsx";
-import { checkAuth } from "../../utils/auth.js";
+import { checkAuth, signup, signin } from "../../utils/auth.js";
 
 function App() {
   const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState("F");
@@ -96,7 +96,7 @@ function App() {
   const handleLogout = () => {
     localStorage.removeItem("jwt");
     setIsLoggedIn(false);
-    setCurrentUser(null);
+    setCurrentUser({});
   };
 
   /**************************************************************************
@@ -193,14 +193,17 @@ function App() {
       })
       .then((data) => {
         localStorage.setItem("jwt", data.token);
-        setCurrentUser(data.user);
-        setIsLoggedIn(true);
-      })
+        setCurrentUser(userData);
+        //console.log(data);
 
+        setIsLoggedIn(true);
+        handleCloseModal();
+      })
       .catch((error) => {
         console.error("Registration or login failed:", error);
       })
       .finally(() => {
+        //console.log(currentUser);
         setIsLoading(false);
       });
   };

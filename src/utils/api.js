@@ -1,4 +1,4 @@
-const baseUrl = "http://localhost:3001";
+export const baseUrl = "http://localhost:3001";
 
 const token = localStorage.getItem("jwt");
 
@@ -39,27 +39,27 @@ const addItems = ({ name, weather, imageUrl }) => {
   }).then(checkResponse);
 };
 
-const register = ({ name, avatar, email, password }) => {
-  return fetch(`${baseUrl}/signup`, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({ name, avatar, email, password }),
-  }).then(checkResponse);
-};
+//const register = ({ name, avatar, email, password }) => {
+//return fetch(`${baseUrl}/signup`, {
+//method: "POST",
+//headers: {
+//"Content-Type": "application/json",
+//},
+//body: JSON.stringify({ name, avatar, email, password }),
+//}).then(checkResponse);
+//};
 
-const login = ({ email, password }) => {
-  return fetch(`${baseUrl}/signin`, {
-    // Ensure the endpoint is correct (should be /signin in your case)
-    method: "POST",
-    headers: {
-      Authorization: `Bearer ${localStorage.getItem("jwt")}`,
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({ email, password }),
-  }).then(checkResponse);
-};
+//const login = ({ email, password }) => {
+//return fetch(`${baseUrl}/signin`, {
+// Ensure the endpoint is correct (should be /signin in your case)
+//method: "POST",
+//headers: {
+//Authorization: `Bearer ${localStorage.getItem("jwt")}`,
+//"Content-Type": "application/json",
+//},
+//body: JSON.stringify({ email, password }),
+//}).then(checkResponse);
+//};
 
 const deleteItem = (id) => {
   const token = localStorage.getItem("jwt"); // Get it at call time!
@@ -110,6 +110,6 @@ export const api = {
   addCardLike,
   removeCardLike,
   updateUserProfile,
-  register,
-  login,
+  //register,
+  //login,
 };

@@ -49,7 +49,6 @@ const EditProfileModal = ({ handleCloseModal, onSubmit, isOpen }) => {
           placeholder="Avatar URL"
           value={avatar}
           onChange={(e) => setAvatar(e.target.value)}
-          required
         />
       </label>
 
