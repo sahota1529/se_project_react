@@ -183,10 +183,9 @@ function App() {
   const handleRegisterSubmit = (userData) => {
     setIsLoading(true);
 
-    return api
-      .register(userData)
+    return signup(userData)
       .then(() => {
-        return api.login({
+        return signin({
           email: userData.email,
           password: userData.password,
         });
@@ -194,23 +193,20 @@ function App() {
       .then((data) => {
         localStorage.setItem("jwt", data.token);
         setCurrentUser(userData);
-        //console.log(data);
-
         setIsLoggedIn(true);
         handleCloseModal();
       })
+
       .catch((error) => {
         console.error("Registration or login failed:", error);
       })
       .finally(() => {
-        //console.log(currentUser);
         setIsLoading(false);
       });
   };
 
   const handleLoginSubmit = (userData) => {
-    return api
-      .login(userData)
+    return signin(userData)
       .then((res) => {
         if (res.token) {
           localStorage.setItem("jwt", res.token);
