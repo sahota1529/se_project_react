@@ -12,21 +12,23 @@ function Header({ onSignUp, onLogIn, onAddGarment, weatherData }) {
   });
 
   const [value, setValue] = useState(false);
-  const { user } = useContext(CurrentUserContext) || {};
   const currentUser = useContext(CurrentUserContext);
 
   const renderAvatar = () => {
+    if (!currentUser) {
+      return null;
+    }
     if (currentUser.avatar) {
       return (
         <img src={currentUser.avatar} alt="Avatar" className="header__avatar" />
       );
     }
-    console.log(currentUser.avatar);
-    const initial = user.name ? user.name.charAt(0).toUpperCase() : "?";
-    return <div className="header__avatar-placeholder">{initial}</div>;
+    return (
+      <div className="header__avatar-placeholder">
+        {currentUser.name ? currentUser.name.charAt(0).toUpperCase() : "?"}
+      </div>
+    );
   };
-
-  // console.log({ user });
 
   return (
     <header className="header">

@@ -74,7 +74,7 @@ const RegisterModal = ({
           required
         />
       </label>
-      <label htmlFor="avatarURL" className="modal__label">
+      <label htmlFor="avatar" className="modal__label">
         Avatar URL *{" "}
         <input
           type="url"

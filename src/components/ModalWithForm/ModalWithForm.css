@@ -22,15 +22,15 @@
 }
 
 .modal__close {
-  background: transparent url(../../images/close-button.svg) center no-repeat;
+  background: url(../../images/close-button.svg) center no-repeat;
   position: absolute;
   top: 20px;
   right: 28px;
   border: none;
-  background-color: transparent;
   width: 16px;
   height: 16px;
   cursor: pointer;
+  padding: 0;
 }
 
 .modal__title {

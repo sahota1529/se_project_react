@@ -7,7 +7,7 @@ export function checkResponse(res) {
     return res.json();
   } else {
     return res.json().then((err) => {
-      console.error("Error response:", err); // log the error message from the server
+      console.error("Error response:", err);
       return Promise.reject(
         `Error ${res.status}: ${err.message || "Unknown error"}`
       );
@@ -39,30 +39,8 @@ const addItems = ({ name, weather, imageUrl }) => {
   }).then(checkResponse);
 };
 
-//const register = ({ name, avatar, email, password }) => {
-//return fetch(`${baseUrl}/signup`, {
-//method: "POST",
-//headers: {
-//"Content-Type": "application/json",
-//},
-//body: JSON.stringify({ name, avatar, email, password }),
-//}).then(checkResponse);
-//};
-
-//const login = ({ email, password }) => {
-//return fetch(`${baseUrl}/signin`, {
-// Ensure the endpoint is correct (should be /signin in your case)
-//method: "POST",
-//headers: {
-//Authorization: `Bearer ${localStorage.getItem("jwt")}`,
-//"Content-Type": "application/json",
-//},
-//body: JSON.stringify({ email, password }),
-//}).then(checkResponse);
-//};
-
 const deleteItem = (id) => {
-  const token = localStorage.getItem("jwt"); // Get it at call time!
+  const token = localStorage.getItem("jwt");
   return fetch(`${baseUrl}/items/${id}`, {
     method: "DELETE",
     headers: {
@@ -74,7 +52,7 @@ const deleteItem = (id) => {
 
 const addCardLike = (id, token) => {
   return fetch(`${baseUrl}/items/${id}/likes`, {
-    method: "PUT", // RESTful convention to add a like
+    method: "PUT",
     headers: {
       "Content-Type": "application/json",
       Authorization: `Bearer ${localStorage.getItem("jwt")}`,
@@ -84,7 +62,7 @@ const addCardLike = (id, token) => {
 
 const removeCardLike = (id, token) => {
   return fetch(`${baseUrl}/items/${id}/likes`, {
-    method: "DELETE", // RESTful convention to remove a like
+    method: "DELETE",
     headers: {
       "Content-Type": "application/json",
       Authorization: `Bearer ${localStorage.getItem("jwt")}`,
@@ -110,6 +88,4 @@ export const api = {
   addCardLike,
   removeCardLike,
   updateUserProfile,
-  //register,
-  //login,
 };
