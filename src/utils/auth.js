@@ -1,3 +1,8 @@
+const API_URL =
+  process.env.NODE_ENV === "production"
+    ? "https://api.wtwr.cloudranger.net"
+    : "http://localhost:3001";
+
 import { baseUrl } from "./api";
 import { checkResponse } from "./api";
 
